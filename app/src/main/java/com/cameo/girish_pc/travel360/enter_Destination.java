@@ -1,6 +1,7 @@
 package com.cameo.girish_pc.travel360;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
@@ -26,6 +27,15 @@ public class enter_Destination extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Getting info", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+            }
+        });
+
+        FloatingActionButton friend = (FloatingActionButton) findViewById(R.id.frnd);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(enter_Destination.this, mapActivity.class);
+                startActivity(i);
             }
         });
     }

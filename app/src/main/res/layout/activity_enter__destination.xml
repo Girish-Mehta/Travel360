@@ -24,4 +24,12 @@
         android:layout_margin="@dimen/fab_margin"
         android:src="@drawable/next_arrow" />
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/frnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|left"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/friend_find" />
+
 </android.support.design.widget.CoordinatorLayout>
