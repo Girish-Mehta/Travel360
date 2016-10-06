@@ -9,7 +9,11 @@ android {
         minSdkVersion 16
         targetSdkVersion 24
         versionCode 1
+        multiDexEnabled true
         versionName "1.0"
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
     }
     buildTypes {
         release {
@@ -25,4 +29,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:24.2.0'
     compile 'com.android.support:support-v4:24.2.0'
     compile 'com.android.support:design:24.2.0'
+    compile 'com.google.android.gms:play-services:9.4.0'
 }

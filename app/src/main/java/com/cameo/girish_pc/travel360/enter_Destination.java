@@ -1,19 +1,16 @@
 package com.cameo.girish_pc.travel360;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Toast;
 
 public class enter_Destination extends AppCompatActivity {
 
-
+    public String des;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,13 +22,14 @@ public class enter_Destination extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Getting info", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                des = findViewById(R.id.editText).toString();
+                Intent i = new Intent(enter_Destination.this, weather_Update.class);
+                startActivity(i);
             }
         });
 
-        FloatingActionButton friend = (FloatingActionButton) findViewById(R.id.frnd);
-        fab.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton friend = (FloatingActionButton) findViewById(R.id.friend);
+        friend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(enter_Destination.this, mapActivity.class);
