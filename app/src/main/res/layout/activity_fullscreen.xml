@@ -12,6 +12,17 @@
         android:background="@color/bright"
         android:fitsSystemWindows="true">
 
+        <GridLayout
+            android:id="@+id/fullscreen_content_controls"
+            style="?metaButtonBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            tools:ignore="UselessParent"
+            android:weightSum="1"
+            android:onClick="NextActivity">
+
+        </GridLayout>
 
         <TextView
             android:text="Travel 360"

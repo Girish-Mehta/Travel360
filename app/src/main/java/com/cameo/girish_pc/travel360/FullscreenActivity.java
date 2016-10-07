@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.TextView;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -92,7 +93,7 @@ public class FullscreenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_fullscreen);
 
         mVisible = true;
-        mControlsView = findViewById(R.id.fullscreen_content_controls);
+        mControlsView = (TextView) findViewById(R.id.fullscreen_content_controls);
         mContentView = findViewById(R.id.fullscreen_content);
 
 
@@ -104,7 +105,7 @@ public class FullscreenActivity extends AppCompatActivity {
             }
         });
 
-        CountDownTimer cdt = new CountDownTimer(2000,1000) {
+        CountDownTimer cdt = new CountDownTimer(1000,1000) {
             @Override
             public void onTick(long millisUntilFinished) {
 
