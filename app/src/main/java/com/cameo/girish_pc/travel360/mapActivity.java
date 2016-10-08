@@ -76,13 +76,10 @@ public class mapActivity extends FragmentActivity implements OnMapReadyCallback,
     public void onMapReady(GoogleMap googleMap) {
         this.mMap = googleMap;
         this.mMap.clear();
-//        MarkerOptions mp = new MarkerOptions();
         googleMap.setMyLocationEnabled(true);
         if (ContextCompat.checkSelfPermission(this, "android.permission.ACCESS_FINE_LOCATION") != 0 && ContextCompat.checkSelfPermission(this, "android.permission.ACCESS_COARSE_LOCATION") != 0) {
             this.googleApiClient = new Builder(this).addConnectionCallbacks((GoogleApiClient.ConnectionCallbacks) this).addOnConnectionFailedListener((GoogleApiClient.OnConnectionFailedListener) this).addApi(LocationServices.API).build();
             Location location = LocationServices.FusedLocationApi.getLastLocation(this.googleApiClient);
         }
     }
-
-
 }

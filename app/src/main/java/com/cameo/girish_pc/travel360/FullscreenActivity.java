@@ -105,7 +105,7 @@ public class FullscreenActivity extends AppCompatActivity {
             }
         });
 
-        CountDownTimer cdt = new CountDownTimer(1000,1000) {
+        CountDownTimer cdt = new CountDownTimer(2000,1000) {
             @Override
             public void onTick(long millisUntilFinished) {
 
