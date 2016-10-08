@@ -9,6 +9,8 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
+
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.GoogleApiClient.Builder;
@@ -79,7 +81,12 @@ public class mapActivity extends FragmentActivity implements OnMapReadyCallback,
         googleMap.setMyLocationEnabled(true);
         if (ContextCompat.checkSelfPermission(this, "android.permission.ACCESS_FINE_LOCATION") != 0 && ContextCompat.checkSelfPermission(this, "android.permission.ACCESS_COARSE_LOCATION") != 0) {
             this.googleApiClient = new Builder(this).addConnectionCallbacks((GoogleApiClient.ConnectionCallbacks) this).addOnConnectionFailedListener((GoogleApiClient.OnConnectionFailedListener) this).addApi(LocationServices.API).build();
-            Location location = LocationServices.FusedLocationApi.getLastLocation(this.googleApiClient);
+//            Location location = LocationServices.FusedLocationApi.getLastLocation(this.googleApiClient);
         }
+        Location location = LocationServices.FusedLocationApi.getLastLocation(this.googleApiClient);
+        this.longitude = location.getLongitude();
+        this.latitude = location.getLatitude();
+        Log.v("mapActivity",""+longitude);
+        Log.v("mapActivity",""+latitude);
     }
 }
