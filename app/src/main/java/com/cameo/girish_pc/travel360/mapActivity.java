@@ -19,13 +19,15 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 
+import java.io.StringBufferInputStream;
+
 public class mapActivity extends FragmentActivity implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
     private GoogleApiClient googleApiClient;
     private GoogleMap mMap;
     protected LocationManager locationManager;
-    private double longitude;
-    private double latitude;
+    private String longitude;
+    private String latitude;
 
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
@@ -53,20 +55,7 @@ public class mapActivity extends FragmentActivity implements OnMapReadyCallback,
         }
     }
 
-
-
-    public void getCurrentLocation() {
-        if (ContextCompat.checkSelfPermission(this, "android.permission.ACCESS_FINE_LOCATION") != 0 && ContextCompat.checkSelfPermission(this, "android.permission.ACCESS_COARSE_LOCATION") != 0) {
-            Location location = LocationServices.FusedLocationApi.getLastLocation(this.googleApiClient);
-            if (location != null) {
-                this.longitude = location.getLongitude();
-                this.latitude = location.getLatitude();
-            }
-        }
-    }
-
     public void onConnected(Bundle bundle) {
-        getCurrentLocation();
     }
 
     public void onConnectionSuspended(int i) {
@@ -81,12 +70,7 @@ public class mapActivity extends FragmentActivity implements OnMapReadyCallback,
         googleMap.setMyLocationEnabled(true);
         if (ContextCompat.checkSelfPermission(this, "android.permission.ACCESS_FINE_LOCATION") != 0 && ContextCompat.checkSelfPermission(this, "android.permission.ACCESS_COARSE_LOCATION") != 0) {
             this.googleApiClient = new Builder(this).addConnectionCallbacks((GoogleApiClient.ConnectionCallbacks) this).addOnConnectionFailedListener((GoogleApiClient.OnConnectionFailedListener) this).addApi(LocationServices.API).build();
-//            Location location = LocationServices.FusedLocationApi.getLastLocation(this.googleApiClient);
+            Location location = LocationServices.FusedLocationApi.getLastLocation(this.googleApiClient);
         }
-        Location location = LocationServices.FusedLocationApi.getLastLocation(this.googleApiClient);
-        this.longitude = location.getLongitude();
-        this.latitude = location.getLatitude();
-        Log.v("mapActivity",""+longitude);
-        Log.v("mapActivity",""+latitude);
     }
 }
