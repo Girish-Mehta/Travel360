@@ -84,7 +84,7 @@ public class mapActivity extends FragmentActivity implements OnMapReadyCallback,
 //
 //        Location location = LocationServices.FusedLocationApi.getLastLocation(this.googleApiClient);
 //        latitude = Double.toString(location.getLatitude());
-//        Toast.makeText(this, "your lat is "+latitude, Toast.LENGTH_LONG).show();
+//          Toast.makeText(this, "your lat is "+latitude, Toast.LENGTH_LONG).show();
     }
 
     public void onConnected(Bundle bundle) {

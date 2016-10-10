@@ -5,4 +5,5 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_enter__destination">enter_Destination</string>
     <string name="title_activity_map">Map</string>
+    <string name="title_activity_blabla">blabla</string>
 </resources>

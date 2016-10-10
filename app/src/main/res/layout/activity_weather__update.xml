@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:orientation="vertical"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.cameo.girish_pc.travel360.weather_Update">
@@ -24,11 +25,21 @@
         android:background="#ff4081"
         android:textColor="#ffffff" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="50dp"
+        android:id="@+id/weather_Update">
+
+    </LinearLayout>
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/uplod"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|left"
+        android:layout_gravity="center_horizontal"
         android:src="@drawable/uplod"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/textView"

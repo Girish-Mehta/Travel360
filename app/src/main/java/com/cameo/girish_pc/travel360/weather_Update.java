@@ -22,7 +22,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -42,6 +45,9 @@ import java.util.List;
 
 public class weather_Update extends AppCompatActivity {
 
+//    public String user_Destination;
+//    private static int pos;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,11 +60,34 @@ public class weather_Update extends AppCompatActivity {
                 Toast.makeText(weather_Update.this, "Upload currently Unavailable", Toast.LENGTH_SHORT).show();
             }
         });
-    }
 
-    public void Act()
-    {
-        Intent nxt = new Intent(this,weather_Output.class);
-        startActivity(nxt);
+        TextView click_Action = (TextView)findViewById(R.id.textView);
+        click_Action.setOnClickListener(new View.OnClickListener(){
+           @Override
+            public void onClick(View view)
+           {
+               Intent i = new Intent(weather_Update.this, weather_Output.class);
+               startActivity(i);
+           }
+        });
+
+        //Toast.makeText(weather_Update.this, "Destination: "+user_Destination, Toast.LENGTH_LONG).show();
+
+        //Array list to store destinations
+        ArrayList<String> user_Locations = new ArrayList<String>();
+
+        //Layout object to push in locations
+        LinearLayout ContentView = (LinearLayout)findViewById(R.id.weather_Update);
+
+        //add location to array(pos)
+        user_Locations.add("Tried to get destination printed here");
+        //create new textview to print location
+        TextView tv_obj = new TextView(this);
+        //set text of text view with value = location
+        tv_obj.setText(user_Locations.get(0));
+        //add text view to the layout
+        ContentView.addView(tv_obj);
+
+
     }
 }

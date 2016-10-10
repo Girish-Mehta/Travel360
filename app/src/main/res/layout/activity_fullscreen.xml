@@ -25,7 +25,7 @@
         </GridLayout>
 
         <TextView
-            android:text="Travel 360"
+            android:text="Beer Up !"
             android:textSize="50dp"
             android:id="@+id/fullscreen_content"
             android:layout_width="300dp"
