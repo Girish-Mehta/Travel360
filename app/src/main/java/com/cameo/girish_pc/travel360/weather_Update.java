@@ -66,7 +66,7 @@ public class weather_Update extends AppCompatActivity {
            @Override
             public void onClick(View view)
            {
-               Intent i = new Intent(weather_Update.this, weather_Output.class);
+               Intent i = new Intent(weather_Update.this, ShowList.class);
                startActivity(i);
            }
         });
